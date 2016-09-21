@@ -45,7 +45,7 @@ timer=0.0f;
 
 public void AngleTarget()
 	{
-		if(target)
+		if(target != null)
 		{
 			agleTarget=Vector3.Angle(transformFire.forward, target.position - transformFire.position); //получаем угол между точкой выстрела и целью 
 			
@@ -73,10 +73,9 @@ efect.SetActive(false);
 }
 
 
-public void Fire () 
+	public void Fire () 
 	{
-if(buletHolder > 0 && Time.time > timer)
-		{
+		if(buletHolder > 0 && Time.time > timer){
 			Quaternion fireScatter = transformFire.rotation;
 			fireScatter.x+= Random.Range(-scatter,scatter);
 			fireScatter.y+= Random.Range(-scatter,scatter);

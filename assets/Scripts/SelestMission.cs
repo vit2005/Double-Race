@@ -36,7 +36,7 @@ public class SelestMission : MonoBehaviour {
 
 	if (PlayerPrefs.GetInt ("missionOpen" + _missionName) == 1) 
 		{
-			_selestMissionText.text = "selst";
+			_selestMissionText.text = "select";
 		} 
 		else 
 		{

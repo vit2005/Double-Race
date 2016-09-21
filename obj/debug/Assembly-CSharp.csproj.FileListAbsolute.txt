@@ -22,3 +22,25 @@ D:\Double Race\Temp\bin\Debug\OpenIAB_W8Plugin.pdb
 D:\Double Race\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 D:\Double Race\obj\Debug\Assembly-CSharp.dll
 D:\Double Race\obj\Debug\Assembly-CSharp.pdb
+D:\Double-Race\Temp\bin\Debug\Assembly-CSharp.dll
+D:\Double-Race\Temp\bin\Debug\Assembly-CSharp.pdb
+D:\Double-Race\Temp\bin\Debug\UnityEditor.dll
+D:\Double-Race\Temp\bin\Debug\UnityEngine.dll
+D:\Double-Race\Temp\bin\Debug\UnityEngine.Networking.dll
+D:\Double-Race\Temp\bin\Debug\UnityEngine.UI.dll
+D:\Double-Race\Temp\bin\Debug\Mono.Cecil.dll
+D:\Double-Race\Temp\bin\Debug\Unity.SerializationLogic.dll
+D:\Double-Race\Temp\bin\Debug\Unity.DataContract.dll
+D:\Double-Race\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+D:\Double-Race\Temp\bin\Debug\Unity.UNetWeaver.dll
+D:\Double-Race\Temp\bin\Debug\Unity.CecilTools.dll
+D:\Double-Race\Temp\bin\Debug\Mono.Cecil.Pdb.dll
+D:\Double-Race\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+D:\Double-Race\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
+D:\Double-Race\Temp\bin\Debug\UnityEngine.xml
+D:\Double-Race\Temp\bin\Debug\UnityEditor.xml
+D:\Double-Race\Temp\bin\Debug\UnityEngine.UI.xml
+D:\Double-Race\Temp\bin\Debug\UnityEngine.Networking.xml
+D:\Double-Race\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+D:\Double-Race\obj\Debug\Assembly-CSharp.dll
+D:\Double-Race\obj\Debug\Assembly-CSharp.pdb

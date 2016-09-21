@@ -1,8 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="assets\Plugins\OpenIAB\WP8\OpenIAB_WP8.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="assets\Scripts\SelestMission.cs">
     <Files>
-      <File FileName="assets\Plugins\OpenIAB\WP8\OpenIAB_WP8.cs" Line="20" Column="14" />
+      <File FileName="assets\Scripts\GameUI\CarSelest.cs" Line="85" Column="43" />
+      <File FileName="assets\Scripts\HitPointEnemi.cs" Line="1" Column="1" />
+      <File FileName="assets\Scripts\FireMachineGunPlayer.cs" Line="70" Column="19" />
+      <File FileName="assets\Scripts\FireMachineGun.cs" Line="47" Column="3" />
+      <File FileName="assets\Scripts\SelestMission.cs" Line="39" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -61,31 +61,32 @@ public class FireMachineGunPlayer : FireMachineGun
 //
 //				if (_rectFire.Contains (_positionTouch)) 
 //				{
-//					Fire ();
+					//Fire ();
+
 //				}
 //
 //			}
 	
-
+			AngleTarget ();
 			//GUI.DrawTexture (new Rect (Screen.width-Screen.height/7,Screen.height-Screen.height/4-Screen.height/7, Screen.height/7, Screen.height/7), reloadTexture);
 			//GUI.DrawTexture (new Rect (Screen.width-Screen.height/4,Screen.height-Screen.height/4, Screen.height/4, Screen.height/4), fireTexture);
 
 //			GUI.matrix = Matrix4x4.Scale(scaleGame);
 //
-//			if (timer - Time.time <= reloadBulet + 0.1f) {
-//				int namberLine = 0;
-//				int line = 0;
-//
-//
-//				for (int i = 0; i < buletHolder; i++) {
-//					GUI.DrawTexture (new Rect (widthScale - (20 + (namberLine * 15)), 215 + (15 * line), 15, 15), buletTexture);
-//					namberLine++;
-//					if (namberLine == buletLine) {
-//						line++;
-//						namberLine = 0;
-//					}
-//				}
-//			}
+			if (timer - Time.time <= reloadBulet + 0.1f) {
+				int namberLine = 0;
+				int line = 0;
+
+
+				for (int i = 0; i < buletHolder; i++) {
+					GUI.DrawTexture (new Rect (widthScale - (20 + (namberLine * 15)), 215 + (15 * line), 15, 15), buletTexture);
+					namberLine++;
+					if (namberLine == buletLine) {
+						line++;
+						namberLine = 0;
+					}
+				}
+			}
 		 }
 }
 

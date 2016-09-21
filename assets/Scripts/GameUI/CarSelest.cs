@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
+using System.Collections.Generic;
 
 public class CarSelest :   MonoBehaviour 
 {
@@ -44,6 +44,7 @@ public class CarSelest :   MonoBehaviour
 	public  Text           speedText;          
 	private string         updateSelest;
 
+	List<int> CarNeedToResize = new List<int>(){1, 3};
 
 	void Start () 
 	{
@@ -75,6 +76,8 @@ public	void CarInstantiate (int i) //создание и удаление авт
 		selest+=i;
 		Destroy (carSelestObject);
 		carSelestObject = Instantiate (carObject [selest], carPosition.position, carPosition.rotation) as GameObject;
+		if (CarNeedToResize.Contains (selest))
+			carSelestObject.transform.localScale = new Vector3 (0.9f,0.9f,0.9f);
 		TTXUpdate ();
 		ButtonControl ();
 	}
