@@ -14,6 +14,11 @@ public class SoundControl : MonoBehaviour {
 		_instance = this;
 		sourse = gameObject.GetComponent<AudioSource> ();
 	}
+
+	void OnEnable(){
+		_instance = this;
+		sourse = gameObject.GetComponent<AudioSource> ();
+	}
 	
 	// Update is called once per frame
 	public void SetVolume () {

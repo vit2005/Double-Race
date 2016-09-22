@@ -60,9 +60,13 @@
      <Compile Include="assets\Plugins\admobplugin\Scripts\AdMobPlugin.cs" />
      <Compile Include="assets\Plugins\admobplugin\Scripts\AdMobPluginDebug.cs" />
      <Compile Include="assets\Plugins\admobplugin\Scripts\AdMobPluginMockup.cs" />
+     <None Include="assets\GooglePlayGames\Editor\Podfile.txt" />
      <None Include="assets\Plugins\admobplugin\LICENSE.txt" />
+     <None Include="assets\GooglePlayGames\Editor\template-GameInfo.txt" />
+     <None Include="assets\GooglePlayGames\Editor\template-AndroidManifest.txt" />
      <None Include="assets\Plugins\Android\AndroidManifest.xml" />
-     <None Include="assets\Plugins\Android\AndroidManifest 1.xml" />
+     <None Include="assets\Plugins\Android\MainLibProj\AndroidManifest.xml" />
+     <None Include="assets\GooglePlayGames\Editor\template-Constants.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

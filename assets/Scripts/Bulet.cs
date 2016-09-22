@@ -5,9 +5,10 @@ public class Bulet : MonoBehaviour
 {
 	public int damage;
 	public GameObject efectPrefarb;
+	public AudioSource asource;
 
 	void Start () {
-	
+		
 	}
 	
 	// Update is called once per frame
