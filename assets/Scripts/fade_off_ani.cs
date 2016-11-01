@@ -5,6 +5,7 @@ using System.Collections;
 public class fade_off_ani : MonoBehaviour {
 
 	public Color c;
+	static bool done = false;
 
 	// Use this for initialization
 	void Start () {
@@ -14,8 +15,10 @@ public class fade_off_ani : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		transform.GetComponent<Image> ().color = c;
-		if (c.a == 0)
+		if (c.a == 0 || done) {
 			gameObject.SetActive (false);
+			done = true;
+		}
 	}
 
 

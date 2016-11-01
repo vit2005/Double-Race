@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.Advertisements;
 
 public class GameMenu : MonoBehaviour {
 
@@ -31,6 +32,7 @@ public class GameMenu : MonoBehaviour {
 			menuUI.localPosition = new Vector3 (0,720,0);
 			settingsUI.localPosition = new Vector3 (1280,0,0);
 			modalWindowUI.localPosition = new Vector3 (0,-720,0);
+			GameOverUI.FindChild ("MENU Button More").GetComponent<Button> ().enabled = Advertisement.IsReady ("ololo");
 			Invoke ("GMUI",2.0f);
 		}
 		if (Input.GetKeyDown(KeyCode.Escape)) 

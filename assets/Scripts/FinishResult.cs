@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.Advertisements;
 
 public class FinishResult : MonoBehaviour {
 
@@ -71,4 +72,28 @@ public class FinishResult : MonoBehaviour {
 		Application.LoadLevel(1);
 	}
 
+	public void ShowAd(){
+		if (Advertisement.IsReady("ololo"))
+		{
+			var options = new ShowOptions { resultCallback = HandleShowResult };
+			Advertisement.Show("ololo", options);
+		}
+	}
+
+	private void HandleShowResult(ShowResult result)
+	{
+		switch (result)
+		{
+		case ShowResult.Finished:
+			Debug.Log("The ad was successfully shown.");
+			Application.LoadLevel(Application.loadedLevel);
+			break;
+		case ShowResult.Skipped:
+			Debug.Log("The ad was skipped before reaching the end.");
+			break;
+		case ShowResult.Failed:
+			Debug.LogError("The ad failed to be shown.");
+			break;
+		}
+	}
 }

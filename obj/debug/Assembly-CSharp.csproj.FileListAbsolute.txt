@@ -44,3 +44,5 @@ D:\Double-Race\Temp\bin\Debug\UnityEngine.Networking.xml
 D:\Double-Race\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 D:\Double-Race\obj\Debug\Assembly-CSharp.dll
 D:\Double-Race\obj\Debug\Assembly-CSharp.pdb
+D:\Double-Race\Temp\bin\Debug\UnityEngine.Advertisements.dll
+D:\Double-Race\Temp\bin\Debug\UnityEngine.Advertisements.xml
