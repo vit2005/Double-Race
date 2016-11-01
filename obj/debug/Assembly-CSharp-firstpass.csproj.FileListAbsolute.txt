@@ -42,5 +42,5 @@ D:\Double-Race\Temp\bin\Debug\UnityEngine.Networking.xml
 D:\Double-Race\obj\Debug\Assembly-CSharp-firstpass.csprojResolveAssemblyReference.cache
 D:\Double-Race\obj\Debug\Assembly-CSharp-firstpass.dll
 D:\Double-Race\obj\Debug\Assembly-CSharp-firstpass.pdb
-D:\Double-Race\Temp\bin\Debug\UnityEngine.Advertisements.dll
-D:\Double-Race\Temp\bin\Debug\UnityEngine.Advertisements.xml
+D:\Double-Race\Temp\bin\Debug\OpenIAB_W8Plugin.dll
+D:\Double-Race\Temp\bin\Debug\OpenIAB_W8Plugin.pdb

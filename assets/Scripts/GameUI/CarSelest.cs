@@ -167,17 +167,17 @@ if(PlayerPrefs.GetInt (carInfoArrey[selest].name) == 1)
 	}
 else
 	{
-			if(PlayerPrefs.GetInt("maney") >= carInfoSelest.price)
-			{
+//			if(PlayerPrefs.GetInt("maney") >= carInfoSelest.price)
+//			{
 				BayWindow.localPosition = new Vector3 (0,0,0);
 				BayWindowEror.localPosition = new Vector3 (0,2000,0);
 
-			}
-			else
-			{
-				BayWindow.localPosition = new Vector3 (0,4000,0);
-				BayWindowEror.localPosition = new Vector3 (0,0,0);
-			}
+//			}
+//			else
+//			{
+//				BayWindow.localPosition = new Vector3 (0,4000,0);
+//				BayWindowEror.localPosition = new Vector3 (0,0,0);
+//			}
 	}
 
 }
@@ -186,18 +186,18 @@ public void Purchase(int index)
 {
 		if(index==0)
 		{
-			if(PlayerPrefs.GetInt("maney") >= carInfoSelest.price)
-			{
+//			if(PlayerPrefs.GetInt("maney") >= carInfoSelest.price)
+//			{
 				PlayerPrefs.SetInt("maney",PlayerPrefs.GetInt("maney")-carInfoSelest.price);
 				BayWindow.localPosition = new Vector3 (0,4000,0);
 				BayWindowEror.localPosition = new Vector3 (0,2000,0);
 				SelestSave(1);
-			}
-			else
-			{
-				BayWindow.localPosition = new Vector3 (0,4000,0);
-				BayWindowEror.localPosition = new Vector3 (0,0,0);
-			}
+//			}
+//			else
+//			{
+//				BayWindow.localPosition = new Vector3 (0,4000,0);
+//				BayWindowEror.localPosition = new Vector3 (0,0,0);
+//			}
 		}
 		else
 		{
@@ -280,18 +280,18 @@ PlayerPrefs.SetInt (carInfoSelest.name + "hpUpdate", PlayerPrefs.GetInt (carInfo
 
 		if (updateSelest == "speed") 
 		{
-            if(PlayerPrefs.GetInt("maney") >= carInfoSelest.price_speed_update[PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")])
-			{
+//            if(PlayerPrefs.GetInt("maney") >= carInfoSelest.price_speed_update[PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")])
+//			{
 				
 
 PlayerPrefs.SetInt("maney",PlayerPrefs.GetInt("maney")-carInfoSelest.price_speed_update[PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")]);
 PlayerPrefs.SetInt (carSelestObject.name + "speed",carInfoSelest._speed_update[PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")]);
 PlayerPrefs.SetInt (carInfoSelest.name + "speedUpdate",PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")+1);
-			}
-			else 
-			{
-				BayWindowEror.localPosition = new Vector3 (0,0,0);
-			}
+//			}
+//			else 
+//			{
+//				BayWindowEror.localPosition = new Vector3 (0,0,0);
+//			}
 		}
 		TTXUpdate ();
 }
@@ -315,14 +315,14 @@ public void WindowUpdate(int index)
 			
 			if (updateSelest == "speed") 
 			{
-				if(PlayerPrefs.GetInt("maney") >= carInfoSelest.price_speed_update[PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")])
-				{
+//				if(PlayerPrefs.GetInt("maney") >= carInfoSelest.price_speed_update[PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")])
+//				{
 					BayWindowUpdate.localPosition = new Vector3 (0,0,0);
-				}
-				else 
-				{
-					BayWindowEror.localPosition = new Vector3 (0,0,0);
-				}
+//				}
+//				else 
+//				{
+//					BayWindowEror.localPosition = new Vector3 (0,0,0);
+//				}
 			}
   
 		}

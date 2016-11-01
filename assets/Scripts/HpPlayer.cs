@@ -60,7 +60,8 @@ public class HpPlayer : HitPoint
 				hpInd.sprite=hpRed;
 		}
 
-
+		if ((transform.rotation.eulerAngles.z < 290f && transform.rotation.eulerAngles.z > 60f) || (transform.rotation.eulerAngles.x < 290f && transform.rotation.eulerAngles.x > 60f))
+			hp = 0;
 
 		if(hp <= 0)
 		{
