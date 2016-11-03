@@ -19,11 +19,15 @@ public class GameMenu : MonoBehaviour {
 
 	void Start () 
 	{
-		player=GameObject.FindWithTag("Player");
+		FindPlayer ();
 		MenuOF ();
 		ModalOF ();
 	}
 
+	public void FindPlayer ()
+	{
+		player=GameObject.FindWithTag("Player");
+	}
 
 	void Update()
 	{

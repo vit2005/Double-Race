@@ -18,6 +18,9 @@ public class HpPlayer : HitPoint
 
 	private int       hpTextureCollorSelest;
 
+	public static Vector3 lastposition;
+	public static GameObject destroyedCar;
+
 	void Start () 
 	{
 	hp += PlayerPrefs.GetInt (gameObject.name + "hp");
@@ -67,7 +70,8 @@ public class HpPlayer : HitPoint
 		{
 			hpInd.sprite=hpAlfa;
 			hpIndText.text="0";
-			Instantiate(destroyPrefarb, transform.position,transform.rotation);
+			lastposition = transform.position;
+			destroyedCar = Instantiate(destroyPrefarb, transform.position,transform.rotation) as GameObject;
 			Destroy(gameObject);
 		}
 

@@ -16,7 +16,7 @@ public class FinishResult : MonoBehaviour {
 	private int       lastPosition;
 
 	private Transform dataTransform;
-
+	public CarInstalGame CarDestroyedController;
 
 
 	public  Text      enemi;
@@ -86,7 +86,8 @@ public class FinishResult : MonoBehaviour {
 		{
 		case ShowResult.Finished:
 			Debug.Log("The ad was successfully shown.");
-			Application.LoadLevel(Application.loadedLevel);
+			//Application.LoadLevel(Application.loadedLevel);
+			CarDestroyedController.CreateNewCar();
 			break;
 		case ShowResult.Skipped:
 			Debug.Log("The ad was skipped before reaching the end.");
