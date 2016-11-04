@@ -28,15 +28,18 @@ public class FinishResult : MonoBehaviour {
 	void Start () 
 	{
 
-		dataTransform = GameObject.FindWithTag ("Player").transform;
+
 
 	
 		PlayerPrefs.SetInt("enemiDestroy",0);
 		PlayerPrefs.SetInt("enemiDestroyMoney",0);
-
-		IndicatorManey () ;
+		FindPlayer();
 	}
-	
+
+	public void FindPlayer(){
+		dataTransform = GameObject.FindWithTag ("Player").transform;
+		IndicatorManey ();
+	}
 	
 	public void IndicatorManey () 
 	{

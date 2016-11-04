@@ -5,6 +5,7 @@ public class CarInstalGame : MonoBehaviour {
 	public GameObject[] car;
 	public CamPositions camPositionController;
 	public GameMenu GameMenuController;
+	public FinishResult FinishResultController;
 
 	void Awake () 
 	{
@@ -20,6 +21,7 @@ public class CarInstalGame : MonoBehaviour {
 		if (camPositionController != null)
 		camPositionController.playerPosinion = (o as GameObject).transform;
 		GameMenuController.FindPlayer ();
+		FinishResultController.FindPlayer ();
 		GameMenuController.GameOverUI.localPosition = new Vector3 (-1200, 0, 0);
 	}
 }

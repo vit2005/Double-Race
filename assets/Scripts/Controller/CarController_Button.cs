@@ -44,7 +44,7 @@ public class CarController_Button : MonoBehaviour
 
 		gameObject.GetComponent<Rigidbody>().centerOfMass=CoM.position;
 	}
-	
+
 
 
 	void Update ()
@@ -79,14 +79,14 @@ public class CarController_Button : MonoBehaviour
 		{
 			right=true;
 		}
-		
+
 
 
 
 
 	}
 
-void ControlRotation()
+	void ControlRotation()
 	{
 		float _y;
 		if (carRotate.localEulerAngles.y >= 180) //проверка на отрицательный или положительный угол поворота(- или + ось)
@@ -102,7 +102,7 @@ void ControlRotation()
 	}
 
 
-void ControlPosition()
+	void ControlPosition()
 	{
 		float _x = Mathf.Clamp(carRotate.position.x ,minX,maxX);
 		float _y = Mathf.Clamp(carRotate.position.y ,0.0f,2.0f);
@@ -111,10 +111,10 @@ void ControlPosition()
 	}
 
 
-void FixedUpdate()
-{
-ControlClick(); 
-ControlButton();
+	void FixedUpdate()
+	{
+		ControlClick(); 
+		ControlButton();
 
 		if(!Input.GetKey("a")&&!(Input.GetKey("d"))&& clic==false)
 
@@ -128,10 +128,10 @@ ControlButton();
 		//управление автомобилем ,выше запуск функции для телефонов ,ниже управление под ПК
 		if(Input.GetKey("a"))
 		{
-			
+
 			Left();
 		}
-		
+
 		if(Input.GetKey("d"))
 		{
 			Right();
@@ -144,7 +144,7 @@ ControlButton();
 
 		if (Input.touchCount > 0) 
 		{ //проверка на нажатие
-		clic=true;
+			clic=true;
 
 			for (int i = 0; i < Input.touchCount; i++)       
 			{
@@ -153,10 +153,10 @@ ControlButton();
 				{
 					Left ();
 				}
-				
+
 				if (Input.touches [i].position.x > Screen.width / 2) 
 				{
-				
+
 					Right ();
 				}
 			}
@@ -175,16 +175,16 @@ ControlButton();
 
 	void Left()
 	{
-	if (left == true) 
-	{
+		if (left == true) 
+		{
 
-	wheelCar [0].steerAngle = -angleWhell;
-	wheelCar [1].steerAngle = -angleWhell;
-	} 
-	else 
-	{
-	NoRotate();
-	}
+			wheelCar [0].steerAngle = -angleWhell;
+			wheelCar [1].steerAngle = -angleWhell;
+		} 
+		else 
+		{
+			NoRotate();
+		}
 
 	}
 
@@ -197,15 +197,15 @@ ControlButton();
 		}
 		else 
 		{
-		NoRotate();
-		 }
+			NoRotate();
+		}
 	}
 
 
 
 	void NoRotate()
 	{
-	
+
 		wheelCar[0].steerAngle=-current_angle;      //выравнивание автомобиля(угол поворота колес = углу поворота автомобиля *-)
 		wheelCar[1].steerAngle=-current_angle;
 	}
