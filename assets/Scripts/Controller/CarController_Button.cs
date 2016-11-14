@@ -15,7 +15,7 @@ public class CarController_Button : MonoBehaviour
 
 	private float           current_angle;   //текуший угол автомобиля 
 
-	public  Transform       CoM;
+	//public  Transform       CoM;
 
 
 	public  int             minX;
@@ -39,10 +39,8 @@ public class CarController_Button : MonoBehaviour
 		clic      = false;
 
 		carRotate = transform;              //кешируем все требуемые елементы 
-		car       = gameObject.GetComponent<Rigidbody>();
 
-
-		gameObject.GetComponent<Rigidbody>().centerOfMass=CoM.position;
+		//gameObject.GetComponent<Rigidbody>().centerOfMass=CoM.position;
 	}
 
 
