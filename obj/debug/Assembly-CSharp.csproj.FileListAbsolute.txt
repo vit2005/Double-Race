@@ -46,3 +46,5 @@ D:\Double-Race\obj\Debug\Assembly-CSharp.dll
 D:\Double-Race\obj\Debug\Assembly-CSharp.pdb
 D:\Double-Race\Temp\bin\Debug\UnityEngine.Advertisements.dll
 D:\Double-Race\Temp\bin\Debug\UnityEngine.Advertisements.xml
+D:\Double-Race\Temp\bin\Debug\OpenIAB_W8Plugin.dll
+D:\Double-Race\Temp\bin\Debug\OpenIAB_W8Plugin.pdb

@@ -13,13 +13,13 @@ public class CarSelest :   MonoBehaviour
 	private Transform      carPosition;       //позиция создания автомобиля
 	private int            selest;            //индекс выбранного автомобиль из списка
 	private GameObject     carSelestObject;   //обьект созданного автомобиля(для удаления не нужного авто)
-  
+
 	[Header ("Кнопки управления выбором авто и текст на кнопке выбора/покупки")]
 	public  Button         ButtonLeft;        //кнопки смены автомобиля
 	public  Button         ButtonRight;        
 	public  Button         ButtonSelest;      //кнопка выбора
 	public  Text           ButtonSelestText;  //текст на кнопке выбора авто
-	  
+
 	[Header ("Всплывающие окна")]
 	public  RectTransform  BayWindow;         //окно покупок автомобиля
 	public  RectTransform  BayWindowUpdate;   //окно улучшений автомобиля
@@ -48,14 +48,14 @@ public class CarSelest :   MonoBehaviour
 
 	void Start () 
 	{
-//		PlayerPrefs.SetInt ("Iveco",0);
-//		PlayerPrefs.SetInt("maney",1000);
-		 
-//		PlayerPrefs.SetInt ("Iveco" + "hpUpdate",0);
-//		PlayerPrefs.SetInt ("Iveco" + "speedUpdate",0);
-//
-//		PlayerPrefs.SetInt ("Humvee" + "hpUpdate",0);
-//		PlayerPrefs.SetInt ("Humvee" + "speedUpdate",0);
+		//		PlayerPrefs.SetInt ("Iveco",0);
+		//		PlayerPrefs.SetInt("maney",1000);
+
+		//		PlayerPrefs.SetInt ("Iveco" + "hpUpdate",0);
+		//		PlayerPrefs.SetInt ("Iveco" + "speedUpdate",0);
+		//
+		//		PlayerPrefs.SetInt ("Humvee" + "hpUpdate",0);
+		//		PlayerPrefs.SetInt ("Humvee" + "speedUpdate",0);
 
 		PlayerPrefs.SetInt ("UAZ",1);
 
@@ -71,7 +71,7 @@ public class CarSelest :   MonoBehaviour
 
 
 
-public	void CarInstantiate (int i) //создание и удаление автомобилей и смена индекса
+	public	void CarInstantiate (int i) //создание и удаление автомобилей и смена индекса
 	{
 		selest+=i;
 		Destroy (carSelestObject);
@@ -82,12 +82,13 @@ public	void CarInstantiate (int i) //создание и удаление авт
 		ButtonControl ();
 	}
 
-public void  TTXUpdate() //обновление информации об автомобиле
+	public void  TTXUpdate() //обновление информации об автомобиле
 	{
 		carInfoSelest       = carInfoArrey [selest];
 		nameCar.text        = carInfoSelest.name;
 		//infoCar.text      = carInfoSelest.info;
-		ttxCar.text         = System.Convert.ToString(System.Convert.ToInt32(carInfoSelest.hp)+PlayerPrefs.GetInt(carSelestObject.name + "hp")) + "\n" + System.Convert.ToString(System.Convert.ToInt32(carInfoSelest.speed)+PlayerPrefs.GetInt(carSelestObject.name + "speed")) + "\n" + carInfoSelest.control;
+		//ttxCar.text         = System.Convert.ToString(System.Convert.ToInt32(carInfoSelest.hp)+PlayerPrefs.GetInt(carSelestObject.name + "hp")) + "\n" + System.Convert.ToString(System.Convert.ToInt32(carInfoSelest.speed)+PlayerPrefs.GetInt(carSelestObject.name + "speed")) + "\n" + carInfoSelest.control;
+		ttxCar.text         = carInfoSelest.hp + "\n" + carInfoSelest.speed + "\n" + carInfoSelest.control;
 
 		if (PlayerPrefs.GetInt (carInfoSelest.name + "hpUpdate") < carInfoSelest._hp_update.Length && PlayerPrefs.GetInt (carInfoArrey[selest].name) == 1) 
 		{
@@ -95,7 +96,7 @@ public void  TTXUpdate() //обновление информации об авт
 		} 
 		else
 		{
-ttxCarUpdate.text="";
+			ttxCarUpdate.text="";
 		}
 
 		if (PlayerPrefs.GetInt (carInfoSelest.name + "speedUpdate") < carInfoSelest._speed_update.Length && PlayerPrefs.GetInt (carInfoArrey[selest].name) == 1) {
@@ -113,9 +114,9 @@ ttxCarUpdate.text="";
 		Purchase_and_Selest_Button();
 	}
 
-public void   InfoUpdate() //обновление информации об автомобиле
+	public void   InfoUpdate() //обновление информации об автомобиле
 	{
-if (PlayerPrefs.GetInt (carInfoArrey [selest].name) == 1) {
+		if (PlayerPrefs.GetInt (carInfoArrey [selest].name) == 1) {
 			if (carInfoSelest._hp_update.Length <= PlayerPrefs.GetInt (carInfoSelest.name + "hpUpdate")) {
 				hpButton.interactable = false;
 				hpText.text = "max";
@@ -139,7 +140,7 @@ if (PlayerPrefs.GetInt (carInfoArrey [selest].name) == 1) {
 		}
 	}
 
-public void ButtonControl()  //включение и отключение кнопок выбора автомобилей 
+	public void ButtonControl()  //включение и отключение кнопок выбора автомобилей 
 	{
 		if (selest > 0) {
 			ButtonLeft.interactable = true;
@@ -158,46 +159,46 @@ public void ButtonControl()  //включение и отключение кно
 		}
 
 	}
-public void Purchase_test()
-{
-if(PlayerPrefs.GetInt (carInfoArrey[selest].name) == 1)
+	public void Purchase_test()
 	{
+		if(PlayerPrefs.GetInt (carInfoArrey[selest].name) == 1)
+		{
 			Purchase(1);
 			SelestSave(0);
+		}
+		else
+		{
+			//			if(PlayerPrefs.GetInt("maney") >= carInfoSelest.price)
+			//			{
+			BayWindow.localPosition = new Vector3 (0,0,0);
+			BayWindowEror.localPosition = new Vector3 (0,2000,0);
+
+			//			}
+			//			else
+			//			{
+			//				BayWindow.localPosition = new Vector3 (0,4000,0);
+			//				BayWindowEror.localPosition = new Vector3 (0,0,0);
+			//			}
+		}
+
 	}
-else
+
+	public void Purchase(int index)
 	{
-//			if(PlayerPrefs.GetInt("maney") >= carInfoSelest.price)
-//			{
-				BayWindow.localPosition = new Vector3 (0,0,0);
-				BayWindowEror.localPosition = new Vector3 (0,2000,0);
-
-//			}
-//			else
-//			{
-//				BayWindow.localPosition = new Vector3 (0,4000,0);
-//				BayWindowEror.localPosition = new Vector3 (0,0,0);
-//			}
-	}
-
-}
-
-public void Purchase(int index)
-{
 		if(index==0)
 		{
-//			if(PlayerPrefs.GetInt("maney") >= carInfoSelest.price)
-//			{
-				PlayerPrefs.SetInt("maney",PlayerPrefs.GetInt("maney")-carInfoSelest.price);
-				BayWindow.localPosition = new Vector3 (0,4000,0);
-				BayWindowEror.localPosition = new Vector3 (0,2000,0);
-				SelestSave(1);
-//			}
-//			else
-//			{
-//				BayWindow.localPosition = new Vector3 (0,4000,0);
-//				BayWindowEror.localPosition = new Vector3 (0,0,0);
-//			}
+			//			if(PlayerPrefs.GetInt("maney") >= carInfoSelest.price)
+			//			{
+			PlayerPrefs.SetInt("maney",PlayerPrefs.GetInt("maney")-carInfoSelest.price);
+			BayWindow.localPosition = new Vector3 (0,4000,0);
+			BayWindowEror.localPosition = new Vector3 (0,2000,0);
+			SelestSave(1);
+			//			}
+			//			else
+			//			{
+			//				BayWindow.localPosition = new Vector3 (0,4000,0);
+			//				BayWindowEror.localPosition = new Vector3 (0,0,0);
+			//			}
 		}
 		else
 		{
@@ -206,19 +207,19 @@ public void Purchase(int index)
 		}
 		TTXUpdate ();
 		Purchase_and_Selest_Button();
-}
+	}
 
 
 
 
-public void Purchase_and_Selest_Button()
+	public void Purchase_and_Selest_Button()
 	{
-if(PlayerPrefs.GetInt ("carPlayer") == selest)
+		if(PlayerPrefs.GetInt ("carPlayer") == selest)
 		{
 			selestIndicator.text = "ВЫБРАНА";
 			ButtonSelest.interactable = false;
 		}
-else
+		else
 		{
 			selestIndicator.text = "";
 			ButtonSelest.interactable = true;
@@ -226,77 +227,77 @@ else
 
 
 
-if(PlayerPrefs.GetInt (carInfoArrey[selest].name) == 1)
-{
+		if(PlayerPrefs.GetInt (carInfoArrey[selest].name) == 1)
+		{
 			ButtonSelestText.text = "ВЫБРАТЬ";
-		
 
-}
-else
-{
-ButtonSelestText.text = System.Convert.ToString(carInfoArrey[selest].price)+ " $";
 
-}
+		}
+		else
+		{
+			ButtonSelestText.text = System.Convert.ToString(carInfoArrey[selest].price)+ " $";
+
+		}
 
 
 	}
 
 
 
-public void SelestSave(int info)
+	public void SelestSave(int info)
 	{
 		if(info == 1)
 		{
-		PlayerPrefs.SetInt (carInfoArrey[selest].name,1);
+			PlayerPrefs.SetInt (carInfoArrey[selest].name,1);
 		}
 
 		PlayerPrefs.SetInt ("carPlayer",selest);
 		PlayerPrefs.Save();
 	}
 
-public void UpdateSelest(string index)
+	public void UpdateSelest(string index)
 	{
 		updateSelest = index;
 	}
 
-public void UpdateCars()
-{
+	public void UpdateCars()
+	{
 		WindowUpdate (1);
 
 		if (updateSelest == "hp") 
 		{
 			if (PlayerPrefs.GetInt ("maney") >= carInfoSelest.price_hp_update [PlayerPrefs.GetInt (carInfoSelest.name + "hpUpdate")]) 
 			{
-PlayerPrefs.SetInt ("maney", PlayerPrefs.GetInt ("maney") - carInfoSelest.price_hp_update [PlayerPrefs.GetInt (carInfoSelest.name + "hpUpdate")]);
-PlayerPrefs.SetInt (carSelestObject.name + "hp",carInfoSelest._hp_update[PlayerPrefs.GetInt(carInfoSelest.name + "hpUpdate")]);
-PlayerPrefs.SetInt (carInfoSelest.name + "hpUpdate", PlayerPrefs.GetInt (carInfoSelest.name + "hpUpdate") + 1);
+				PlayerPrefs.SetInt ("maney", PlayerPrefs.GetInt ("maney") - carInfoSelest.price_hp_update [PlayerPrefs.GetInt (carInfoSelest.name + "hpUpdate")]);
+				PlayerPrefs.SetInt (carSelestObject.name + "hp",carInfoSelest._hp_update[PlayerPrefs.GetInt(carInfoSelest.name + "hpUpdate")]);
+				PlayerPrefs.SetInt (carInfoSelest.name + "hpUpdate", PlayerPrefs.GetInt (carInfoSelest.name + "hpUpdate") + 1);
 			}
 			else 
 			{
 				BayWindowEror.localPosition = new Vector3 (0,0,0);
 			}
 		} 
-	
+
 
 		if (updateSelest == "speed") 
 		{
-//            if(PlayerPrefs.GetInt("maney") >= carInfoSelest.price_speed_update[PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")])
-//			{
-				
+			            if(PlayerPrefs.GetInt("maney") >= carInfoSelest.price_speed_update[PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")])
+						{
 
-PlayerPrefs.SetInt("maney",PlayerPrefs.GetInt("maney")-carInfoSelest.price_speed_update[PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")]);
-PlayerPrefs.SetInt (carSelestObject.name + "speed",carInfoSelest._speed_update[PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")]);
-PlayerPrefs.SetInt (carInfoSelest.name + "speedUpdate",PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")+1);
-//			}
-//			else 
-//			{
-//				BayWindowEror.localPosition = new Vector3 (0,0,0);
-//			}
+
+			PlayerPrefs.SetInt("maney",PlayerPrefs.GetInt("maney")-carInfoSelest.price_speed_update[PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")]);
+			PlayerPrefs.SetInt (carSelestObject.name + "speed",carInfoSelest._speed_update[PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")]);
+			PlayerPrefs.SetInt (carInfoSelest.name + "speedUpdate",PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")+1);
+						}
+						else 
+						{
+							BayWindowEror.localPosition = new Vector3 (0,0,0);
+						}
 		}
 		TTXUpdate ();
-}
+	}
 
-public void WindowUpdate(int index)
+	public void WindowUpdate(int index)
 	{
 		if (index == 0) 
 		{
@@ -311,20 +312,20 @@ public void WindowUpdate(int index)
 					BayWindowEror.localPosition = new Vector3 (0,0,0);
 				}
 			} 
-			
-			
+
+
 			if (updateSelest == "speed") 
 			{
-//				if(PlayerPrefs.GetInt("maney") >= carInfoSelest.price_speed_update[PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")])
-//				{
-					BayWindowUpdate.localPosition = new Vector3 (0,0,0);
-//				}
-//				else 
-//				{
-//					BayWindowEror.localPosition = new Vector3 (0,0,0);
-//				}
+				//				if(PlayerPrefs.GetInt("maney") >= carInfoSelest.price_speed_update[PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")])
+				//				{
+				BayWindowUpdate.localPosition = new Vector3 (0,0,0);
+				//				}
+				//				else 
+				//				{
+				//					BayWindowEror.localPosition = new Vector3 (0,0,0);
+				//				}
 			}
-  
+
 		}
 		else 
 		{
@@ -332,7 +333,7 @@ public void WindowUpdate(int index)
 			BayWindowEror.localPosition = new Vector3 (0, 2000, 0);
 		}
 	}
-	 
+
 
 
 

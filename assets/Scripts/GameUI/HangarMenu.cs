@@ -8,9 +8,10 @@ public class HangarMenu : MonoBehaviour {
 
 	void Start()
 	{
+		PlayerPrefs.SetString ("missions","Race1");
 		if (PlayerPrefs.GetString ("missions") == "") 
 		{
-			PlayerPrefs.SetString ("missions","Race");
+			PlayerPrefs.SetString ("missions","Race1");
 		} 
 	}
 	void Update()

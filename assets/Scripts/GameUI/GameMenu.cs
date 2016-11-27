@@ -19,7 +19,7 @@ public class GameMenu : MonoBehaviour {
 
 	void Start () 
 	{
-		FindPlayer ();
+		//FindPlayer ();
 		MenuOF ();
 		ModalOF ();
 	}
@@ -31,13 +31,14 @@ public class GameMenu : MonoBehaviour {
 
 	void Update()
 	{
-		if(!player && GameOverUI.localPosition.x != 0.0f)
-		{
-			menuUI.localPosition = new Vector3 (0,720,0);
-			settingsUI.localPosition = new Vector3 (1280,0,0);
-			modalWindowUI.localPosition = new Vector3 (0,-720,0);
+		if (!player && GameOverUI.localPosition.x != 0.0f) {
+			menuUI.localPosition = new Vector3 (0, 720, 0);
+			settingsUI.localPosition = new Vector3 (1280, 0, 0);
+			modalWindowUI.localPosition = new Vector3 (0, -720, 0);
 			GameOverUI.FindChild ("MENU Button More").GetComponent<Button> ().enabled = Advertisement.IsReady ("ololo");
-			Invoke ("GMUI",2.0f);
+			Invoke ("GMUI", 2.0f);
+		} else {
+			//GameOverUI.localPosition = new Vector3 (-1200, 0, 0);
 		}
 		if (Input.GetKeyDown(KeyCode.Escape)) 
 		{ 
@@ -47,6 +48,11 @@ public class GameMenu : MonoBehaviour {
 
 void GMUI()
 	{
+		player=GameObject.FindWithTag("Player");
+		if (player) {
+			GameOverUI.localPosition = new Vector3 (-1200, 0, 0);
+			return;
+		}
 		GameOverUI.localPosition = new Vector3 (0,0,0);
 		menuUI.localPosition = new Vector3 (0,720,0);
 		settingsUI.localPosition = new Vector3 (1280,0,0);
