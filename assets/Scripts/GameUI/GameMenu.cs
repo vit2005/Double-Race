@@ -117,6 +117,7 @@ public void SelestAction()
 		} 
 		else 
 		{ 
+			HpPlayer.lastposition = null;
 			ExitLevel();
 		}
 	}

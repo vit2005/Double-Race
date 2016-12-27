@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: 2fb8d4b2f2cb44048b18044f550163b6
+timeCreated: 1478372518
+licenseType: Free
+PluginImporter:
+  serializedVersion: 1
+  iconMap: {}
+  executionOrder: {}
+  isPreloaded: 0
+  platformData:
+    Any:
+      enabled: 0
+      settings: {}
+    Editor:
+      enabled: 0
+      settings:
+        DefaultValueInitialized: true
+    WP8:
+      enabled: 1
+      settings: {}
+    WindowsStoreApps:
+      enabled: 0
+      settings:
+        CPU: AnyCPU
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

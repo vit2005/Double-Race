@@ -11,10 +11,13 @@ public class Distantion : MonoBehaviour
 	void Start () 
 	{
 		dataDist     = gameObject.GetComponent<Text> ();
-		dataTransform = GameObject.FindWithTag ("Player").transform;
+		//dataTransform = GameObject.FindWithTag ("Player").transform;
 
 	}
-	
+
+	public void FindPlayer(){
+		dataTransform = GameObject.FindWithTag ("Player").transform;
+	}
 	
 	void Update () 
 	{

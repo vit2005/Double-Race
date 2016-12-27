@@ -51,9 +51,9 @@ public class ShopReal : MonoBehaviour
 
 	private void Start()
 	{
-		OpenIAB.mapSku(SKU_1, OpenIAB_Android.STORE_GOOGLE, "");
-		OpenIAB.mapSku(SKU_2, OpenIAB_Android.STORE_GOOGLE, "");
-		OpenIAB.mapSku(SKU_3, OpenIAB_Android.STORE_GOOGLE, "");
+		OpenIAB.mapSku(SKU_1, OpenIAB_Android.STORE_GOOGLE, SKU_1);
+		OpenIAB.mapSku(SKU_2, OpenIAB_Android.STORE_GOOGLE, SKU_2);
+		OpenIAB.mapSku(SKU_3, OpenIAB_Android.STORE_GOOGLE, SKU_3);
 
 
 		var options = new OnePF.Options();	

@@ -14,18 +14,22 @@ public class MoneyInd : MonoBehaviour
 
 		IndicatorMoney () ;
 	}
-	
+
 
 	public void IndicatorMoney () 
 	{
 		int ind = PlayerPrefs.GetInt("maney");
+		if (ind < 0) {
+			PlayerPrefs.SetInt("maney", 0);
+			ind = 0;
+		}
 		if(allOF==true)
 		{
-		money.text=System.Convert.ToString(PlayerPrefs.GetInt("enemiDestroyMoney"));
+			money.text=System.Convert.ToString(PlayerPrefs.GetInt("enemiDestroyMoney"));
 		}
 		else
 		{
-		money.text=System.Convert.ToString(ind);
+			money.text=System.Convert.ToString(ind);
 		}
 		Invoke("IndicatorMoney",0.1f);
 	}

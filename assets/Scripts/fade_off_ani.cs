@@ -10,8 +10,10 @@ public class fade_off_ani : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (already)
-			Destroy (this);
+		if (already) {
+			gameObject.SetActive (false);
+			//Destroy (this);
+		}
 		else
 			already = true;
 	}

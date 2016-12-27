@@ -1,23 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="assets\Scripts\GameUI\GameMenu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="assets\Scripts\GameUI\CarSelest.cs">
     <Files>
-      <File FileName="assets\Scripts\FinishResult.cs" Line="68" Column="22" />
-      <File FileName="assets\Scripts\GameUI\GameMenu.cs" Line="53" Column="57" />
-      <File FileName="assets\Scripts\GameUI\HangarMenu.cs" Line="1" Column="1" />
-      <File FileName="assets\Scripts\Shop\ShopReal.cs" Line="1" Column="1" />
-      <File FileName="assets\Scripts\GameUI\CarSelest.cs" Line="1" Column="1" />
-      <File FileName="assets\Scripts\GameUI\CarInfo.cs" Line="1" Column="1" />
-      <File FileName="assets\Scripts\CarInstalGame.cs" Line="23" Column="29" />
-      <File FileName="assets\Scripts\TargetEnemi.cs" Line="1" Column="1" />
-      <File FileName="assets\Scripts\FireMachineGunEnemi.cs" Line="1" Column="1" />
-      <File FileName="assets\Scripts\HpPlayer.cs" Line="22" Column="2" />
+      <File FileName="assets\Scripts\GameUI\CarSelest.cs" Line="346" Column="1" />
+      <File FileName="assets\Scripts\GameUI\CarInfo.cs" Line="19" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="D:\Double-Race\assets\Scripts\GameUI\GameMenu.cs" line="30" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

@@ -69,7 +69,7 @@ public class FinishResult : MonoBehaviour {
 	{
 		LoadTexture.localPosition = new Vector3 (0,0,0);
 		PlayerPrefs.SetInt("maney",PlayerPrefs.GetInt("maney")+lastPosition/100*money10m + PlayerPrefs.GetInt("enemiDestroyMoney"));
-
+		HpPlayer.lastposition = null;
 	
 
 		Application.LoadLevel(1);

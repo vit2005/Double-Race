@@ -67,7 +67,7 @@ public class FireMachineGunPlayer : FireMachineGun
 ////
 ////			}
 //	
-//			AngleTarget ();
+			AngleTarget ();
 //			//GUI.DrawTexture (new Rect (Screen.width-Screen.height/7,Screen.height-Screen.height/4-Screen.height/7, Screen.height/7, Screen.height/7), reloadTexture);
 //			//GUI.DrawTexture (new Rect (Screen.width-Screen.height/4,Screen.height-Screen.height/4, Screen.height/4, Screen.height/4), fireTexture);
 //

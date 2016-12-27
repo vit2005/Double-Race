@@ -48,10 +48,12 @@ public void AngleTarget()
 		if(target != null)
 		{
 			agleTarget=Vector3.Angle(transformFire.forward, target.position - transformFire.position); //получаем угол между точкой выстрела и целью 
-			
+
+			//Debug.Log (string.Format("agleTarget: ({0})",agleTarget));
 			if(agleTarget <= agleFire )//проверяем возможность выстрела
 			{
 				Fire();
+				Debug.Log ("Fire called");
 			}
 			
 			if(buletHolder == 0)
@@ -87,6 +89,8 @@ efect.SetActive(false);
 			clone= Instantiate(bulet, transformFire.position,fireScatter) as Rigidbody;
 			clone.velocity = transformFire.TransformDirection(Vector3.forward * forseBulet);
 			clone.gameObject.GetComponent<Bulet>().damage=damage;
+
+			Debug.Log ("bullet fired");
 
 			buletHolder--;
 			timer=Time.time+reloadBulet;

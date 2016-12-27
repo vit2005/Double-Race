@@ -92,7 +92,11 @@ public class CarSelest :   MonoBehaviour
 
 		if (PlayerPrefs.GetInt (carInfoSelest.name + "hpUpdate") < carInfoSelest._hp_update.Length && PlayerPrefs.GetInt (carInfoArrey[selest].name) == 1) 
 		{
-			ttxCarUpdate.text = "+" + System.Convert.ToString(carInfoSelest._hp_update [PlayerPrefs.GetInt (carInfoSelest.name + "hpUpdate")] - PlayerPrefs.GetInt (carSelestObject.name + "hp"));
+			ttxCarUpdate.text = "+" + System.Convert.ToString(carInfoSelest._hp_update [PlayerPrefs.GetInt (carInfoSelest.name + "hpUpdate")]);
+			Debug.Log ("***"+carInfoSelest.name + "hpUpdate = " + PlayerPrefs.GetInt (carInfoSelest.name + "hpUpdate"));
+			Debug.Log ("***"+carInfoSelest._hp_update [PlayerPrefs.GetInt (carInfoSelest.name + "hpUpdate")]);
+			Debug.Log ("***"+carSelestObject.name + "hp = " + PlayerPrefs.GetInt (carSelestObject.name + "hp"));
+
 		} 
 		else
 		{
@@ -100,7 +104,7 @@ public class CarSelest :   MonoBehaviour
 		}
 
 		if (PlayerPrefs.GetInt (carInfoSelest.name + "speedUpdate") < carInfoSelest._speed_update.Length && PlayerPrefs.GetInt (carInfoArrey[selest].name) == 1) {
-			ttxCarUpdate.text += "\n" + "+" + System.Convert.ToString(carInfoSelest._hp_update [PlayerPrefs.GetInt (carInfoSelest.name + "speedUpdate")]-PlayerPrefs.GetInt (carSelestObject.name + "speed"));
+			ttxCarUpdate.text += "\n" + "+" + System.Convert.ToString(carInfoSelest._hp_update [PlayerPrefs.GetInt (carInfoSelest.name + "speedUpdate")]);
 		} 
 		else
 		{
@@ -168,17 +172,17 @@ public class CarSelest :   MonoBehaviour
 		}
 		else
 		{
-			//			if(PlayerPrefs.GetInt("maney") >= carInfoSelest.price)
-			//			{
-			BayWindow.localPosition = new Vector3 (0,0,0);
-			BayWindowEror.localPosition = new Vector3 (0,2000,0);
+			if(PlayerPrefs.GetInt("maney") >= carInfoSelest.price)
+			{
+				BayWindow.localPosition = new Vector3 (0,0,0);
+				BayWindowEror.localPosition = new Vector3 (0,2000,0);
 
-			//			}
-			//			else
-			//			{
-			//				BayWindow.localPosition = new Vector3 (0,4000,0);
-			//				BayWindowEror.localPosition = new Vector3 (0,0,0);
-			//			}
+			}
+			else
+			{
+				BayWindow.localPosition = new Vector3 (0,4000,0);
+				BayWindowEror.localPosition = new Vector3 (0,0,0);
+			}
 		}
 
 	}
@@ -187,18 +191,18 @@ public class CarSelest :   MonoBehaviour
 	{
 		if(index==0)
 		{
-			//			if(PlayerPrefs.GetInt("maney") >= carInfoSelest.price)
-			//			{
-			PlayerPrefs.SetInt("maney",PlayerPrefs.GetInt("maney")-carInfoSelest.price);
-			BayWindow.localPosition = new Vector3 (0,4000,0);
-			BayWindowEror.localPosition = new Vector3 (0,2000,0);
-			SelestSave(1);
-			//			}
-			//			else
-			//			{
-			//				BayWindow.localPosition = new Vector3 (0,4000,0);
-			//				BayWindowEror.localPosition = new Vector3 (0,0,0);
-			//			}
+			if(PlayerPrefs.GetInt("maney") >= carInfoSelest.price)
+			{
+				PlayerPrefs.SetInt("maney",PlayerPrefs.GetInt("maney")-carInfoSelest.price);
+				BayWindow.localPosition = new Vector3 (0,4000,0);
+				BayWindowEror.localPosition = new Vector3 (0,2000,0);
+				SelestSave(1);
+			}
+			else
+			{
+				BayWindow.localPosition = new Vector3 (0,4000,0);
+				BayWindowEror.localPosition = new Vector3 (0,0,0);
+			}
 		}
 		else
 		{
@@ -281,18 +285,16 @@ public class CarSelest :   MonoBehaviour
 
 		if (updateSelest == "speed") 
 		{
-			            if(PlayerPrefs.GetInt("maney") >= carInfoSelest.price_speed_update[PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")])
-						{
-
-
-			PlayerPrefs.SetInt("maney",PlayerPrefs.GetInt("maney")-carInfoSelest.price_speed_update[PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")]);
-			PlayerPrefs.SetInt (carSelestObject.name + "speed",carInfoSelest._speed_update[PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")]);
-			PlayerPrefs.SetInt (carInfoSelest.name + "speedUpdate",PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")+1);
-						}
-						else 
-						{
-							BayWindowEror.localPosition = new Vector3 (0,0,0);
-						}
+			if(PlayerPrefs.GetInt("maney") >= carInfoSelest.price_speed_update[PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")])
+			{
+				PlayerPrefs.SetInt ("maney", PlayerPrefs.GetInt("maney") - carInfoSelest.price_speed_update[PlayerPrefs.GetInt (carInfoSelest.name + "speedUpdate")]);
+				PlayerPrefs.SetInt (carSelestObject.name + "speed",carInfoSelest._speed_update[PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")]);
+				PlayerPrefs.SetInt (carInfoSelest.name + "speedUpdate",PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")+1);
+			}
+			else 
+			{
+				BayWindowEror.localPosition = new Vector3 (0,0,0);
+			}
 		}
 		TTXUpdate ();
 	}
@@ -316,14 +318,14 @@ public class CarSelest :   MonoBehaviour
 
 			if (updateSelest == "speed") 
 			{
-				//				if(PlayerPrefs.GetInt("maney") >= carInfoSelest.price_speed_update[PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")])
-				//				{
-				BayWindowUpdate.localPosition = new Vector3 (0,0,0);
-				//				}
-				//				else 
-				//				{
-				//					BayWindowEror.localPosition = new Vector3 (0,0,0);
-				//				}
+				if(PlayerPrefs.GetInt("maney") >= carInfoSelest.price_speed_update[PlayerPrefs.GetInt(carInfoSelest.name + "speedUpdate")])
+				{
+					BayWindowUpdate.localPosition = new Vector3 (0,0,0);
+				}
+				else 
+				{
+					BayWindowEror.localPosition = new Vector3 (0,0,0);
+				}
 			}
 
 		}

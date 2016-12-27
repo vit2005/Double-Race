@@ -6,6 +6,8 @@ public class CarInstalGame : MonoBehaviour {
 	public CamPositions camPositionController;
 	public GameMenu GameMenuController;
 	public FinishResult FinishResultController;
+	public Distantion DistanceController;
+	public Spidometr SpeedmeterController;
 
 	void Awake () 
 	{
@@ -36,10 +38,12 @@ public class CarInstalGame : MonoBehaviour {
 		yield return new WaitForSeconds (1);
 		GameMenuController.FindPlayer ();
 		FinishResultController.FindPlayer ();
+		DistanceController.FindPlayer ();
+		SpeedmeterController.FindPlayer ();
 	}
 
 	void Instantiating(){
-		Vector3 pos = (HpPlayer.lastposition == null)? transform.position : HpPlayer.lastposition;
+		Vector3 pos = (HpPlayer.lastposition == null)? transform.position : HpPlayer.lastposition.Value;
 		Object o = Instantiate (car [PlayerPrefs.GetInt ("carPlayer")], pos, transform.rotation);
 		camPositionController.playerPosinion = (o as GameObject).transform;
 		StartCoroutine (AfterCreate ());

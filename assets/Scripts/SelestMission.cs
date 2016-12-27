@@ -20,21 +20,21 @@ public class SelestMission : MonoBehaviour {
 
 	void Start () 
 	{
-	
-	PlayerPrefs.SetInt ("missionOpenRece",1);
+
+		PlayerPrefs.SetInt ("missionOpenRece",1);
 	}
 
 	void Update()
 
 	{
-	if(PlayerPrefs.GetFloat(_RecordOpenNemeScene+"Record") >= _RecordOpen)
+		if(PlayerPrefs.GetFloat(_RecordOpenNemeScene+"Record") >= _RecordOpen)
 		{
-	PlayerPrefs.SetInt ("missionOpen"+_missionName,1);
+			PlayerPrefs.SetInt ("missionOpen"+_missionName,1);
 		}
 
-	_RecordUI.text = System.Convert.ToString(PlayerPrefs.GetFloat(_missionName+"Record"))+" km";
+		_RecordUI.text = System.Convert.ToString(PlayerPrefs.GetFloat(_missionName+"Record"))+" km";
 
-	if (PlayerPrefs.GetInt ("missionOpen" + _missionName) == 1) 
+		if (PlayerPrefs.GetInt ("missionOpen" + _missionName) == 1) 
 		{
 			_selestMissionText.text = "select";
 		} 
@@ -65,7 +65,7 @@ public class SelestMission : MonoBehaviour {
 	{
 		if (PlayerPrefs.GetInt ("missionOpen" + _missionName) == 1) 
 		{
-		PlayerPrefs.SetString ("missions", _missionName);
+			PlayerPrefs.SetString ("missions", _missionName);
 		}
 		else 
 		{

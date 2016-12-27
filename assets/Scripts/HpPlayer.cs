@@ -18,7 +18,7 @@ public class HpPlayer : HitPoint
 
 	private int       hpTextureCollorSelest;
 
-	public static Vector3 lastposition;
+	public static Vector3? lastposition;
 	public static GameObject destroyedCar;
 
 	void Start () 
